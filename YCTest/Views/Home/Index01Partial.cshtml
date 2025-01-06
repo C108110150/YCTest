@@ -1,0 +1,44 @@
+﻿@using YCTest.Models.ViewModel
+
+@model IndexViewModel
+
+
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+       @Html.Label("房屋名稱：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.HouseName, new { id = "NewsName", @class = "form-control" })
+        @*@Html.DropDownListFor(x => x.houses.HouseName, (IEnumerable<SelectListItem>)ViewBag.HouseNameOptions, new { @class = "form-select" })*@
+        @Html.ValidationMessageFor(x => x.houses.HouseName, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("城市：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.City, new { id = "City", @class = "form-control" })
+        @Html.DropDownListFor(x => x.houses.City, (IEnumerable<SelectListItem>)ViewBag.CityOptions, new { @class = "form-select" })
+    </div>
+</div>
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("區域：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.Area, new { id = "Area", @class = "form-control" })
+        @Html.DropDownListFor(x => x.houses.Area, (IEnumerable<SelectListItem>)ViewBag.AreaOptions, new { @class = "form-select" })
+        @*@Html.ValidationMessageFor(x => x.houses.Area, "", new { @class = "text-danger" })*@
+    </div>
+</div>
+<!--<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("房屋名稱：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.Address, new { id = "Address", @class = "form-control" })
+        @Html.DropDownListFor(x => x.houses.Address, (IEnumerable<SelectListItem>)ViewBag.AddressOptions, new { @class = "form-select" })-->
+        @*@Html.ValidationMessageFor(x => x.houses.HouseName, "", new { @class = "text-danger" })*@
+    <!--</div>
+</div>-->
