@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;//"~/Views/Shared/_Layout.cshtml";
+    var authenticationSettings_PST = System.Configuration.ConfigurationManager.GetSection("system.web/authentication") as System.Web.Configuration.AuthenticationSection;
+}
+
+@Styles.Render("~/Content/MainCss")
+@Styles.Render("~/Content/DatePickerCss")
+@Styles.Render("~/Content/DataTableCss")
+@Styles.Render("~/Content/Select2")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/Common")
+@Scripts.Render("~/bundles/DatePickerJs")
+@Scripts.Render("~/bundles/DataTableJs")
+@Scripts.Render("~/bundles/Select2")
+
+<script>
+    var _Headers= {'RequestVerificationToken': '@YCTest.Helper.CommonRazorFunctions.GetAntiForgeryToken()'}
+
+    let lengthMenuList = [[10, 50, 100, 300], [10, 50, 100, 300]];
+
+    function openNaviToIframe(newUrl, targetIframeId) {
+        if (targetIframeId === '' || targetIframeId === undefined) {
+            targetIframeId = 'frameid';
+        }
+        window.parent.$('#' + targetIframeId).attr("scrolling", "yes");
+        window.parent.$('#' + targetIframeId).attr("src", newUrl);
+    }
+
+
+</script>
+
+
+@RenderSection("scripts", required: true)
+
+<div class="container-fluid">
+    @RenderBody()
+</div>

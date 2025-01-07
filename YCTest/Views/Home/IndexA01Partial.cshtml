@@ -1,0 +1,42 @@
+﻿@using YCTest.Models.ViewModel
+
+@model IndexViewModel
+
+
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("房屋名稱：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.HouseName, new { id = "NewsName", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.houses.HouseName, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("城市：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @*@Html.DropDownListFor(x => x.houses.City, (IEnumerable<SelectListItem>)ViewBag.CityOptions, new { @class = "form-select" })*@
+        @Html.ValidationMessageFor(x => x.houses.City, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("區域：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @*@Html.DropDownListFor(x => x.houses.Area, (IEnumerable<SelectListItem>)ViewBag.AreaOptions, new { @class = "form-select" })*@
+        @Html.ValidationMessageFor(x => x.houses.Area, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="row border border-black">
+    <div class="content-height-52 bg-custom-green col-md-2 d-flex justify-content-end align-items-center">
+        @Html.Label("連絡電話：")
+    </div>
+    <div class="content-height-52 col-md-10 d-flex align-items-center border-start border-black">
+        @Html.TextBoxFor(x => x.houses.Phone, new { id = "Phone", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.houses.Phone, "", new { @class = "text-danger" })
+    </div>
+</div>
+<button id="btnInsert" type="button" class="btn btn-primary">送出</button>

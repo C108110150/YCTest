@@ -61,7 +61,6 @@ namespace YCData.Model.DB
 
         [Column("IsDelete")]
         [DisplayName("IsDelete")]
-        [Required]
         public bool IsDelete { get; set; }
     }
 }

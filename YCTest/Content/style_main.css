@@ -1,0 +1,367 @@
+﻿@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1440px;
+    }
+}
+
+body {
+    /*bootstrap-bg會有顏色*/
+    background-color: transparent;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+.btn {
+    margin: 5px;
+}
+
+/*bootstrap會有margin故先清空*/
+h1 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+h2,
+.h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+h3,
+.h3 {
+    font-size: 1.375em;
+    padding: 5px;
+}
+
+h4,
+.h4 {
+    font-size: 1.25em;
+}
+
+ul {
+    margin: 0;
+}
+
+p {
+    margin: 0px;
+}
+
+.bg-custom-green {
+    background-color: #d0eddb;
+}
+
+.content-height-52 {
+    height: 3.25rem;
+}
+
+.content-height-90 {
+    height: 5.625rem;
+}
+
+.content-height-142 {
+    height: 8.875rem;
+}
+
+.col-custom-1 {
+    flex: 0 0 auto;
+    width: 15%;
+}
+
+.col-custom-2 {
+    flex: 0 0 auto;
+    width: 20%;
+}
+
+.col-custom-3 {
+    flex: 0 0 auto;
+    width: 26%;
+}
+
+.resize-none {
+    resize: none;
+}
+
+a[href$=".pdf"]::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(../img/file_pdf.png);
+}
+
+a[href$=".xls"]::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(../img/file_xls.png);
+}
+
+a[href$=".doc"]::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(../img/file_doc.png);
+}
+
+a[href$=".odt"]::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(../img/file_odt.png);
+    margin: 0 10px;
+}
+
+a[href$=".docx"]::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(../img/file_docx.png);
+    margin: 0 10px;
+}
+
+.container-fluid {
+    padding: 15px;
+}
+
+h3 {
+    display: inline-block;
+    color: #fff;
+    background-color: #009091;
+}
+
+.mainTitle {
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+    .mainTitle h2 {
+        display: inline-block;
+        border-bottom: 2px solid #009090;
+    }
+
+.subTitle p {
+    color: #009090;
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+
+    .subTitle p::before {
+        content: "｜";
+        display: inline-block;
+        vertical-align: text-bottom;
+        color: #009090;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+
+.detailsWrap > * {
+    padding: 1rem 0;
+}
+
+.table_default {
+    /*table格式*/
+    margin: auto;
+    width: 100% !important;
+    word-break: break-all;
+    margin-top: 1rem;
+}
+
+    .table_default th,
+    .table_default td {
+        padding: 5px 5px;
+    }
+
+@media only screen and (min-width: 768px) {
+    .table_default th,
+    .table_default td {
+        border: 1px solid #fff;
+    }
+}
+
+.table_default thead {
+    background-color: #00909d;
+}
+
+    .table_default thead th {
+        color: #fff;
+        font-weight: bold;
+    }
+
+@media only screen and (min-width: 768px) {
+    .table_default tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    .table_default tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .table_default thead {
+        display: none;
+    }
+
+    .table_default tbody tr {
+        display: block;
+        border: 1px solid #00909d;
+        margin: 10px 0;
+        border-radius: 5pt;
+    }
+
+    .table_default tbody td {
+        display: block;
+        text-align: left;
+        padding: 5px 1rem 5px 2rem;
+        color: black;
+    }
+
+        .table_default tbody td:before {
+            color: #00909d;
+            text-indent: -1rem;
+            content: attr(data-th);
+            font-weight: bold;
+            display: block;
+        }
+}
+
+div > label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+/* footer */
+.loginFooter {
+    background-color: #002838;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+footer .toggleFooter {
+    padding: 0 10px;
+    cursor: pointer;
+    /*background-color: #46a560;*/
+}
+
+footer .fa-chevron-up.show {
+    transform: rotate(180deg);
+}
+
+footer .mainFooter {
+    display: none;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #fff;
+}
+
+@media (min-width: 767.98px) {
+    .border-md-end-0 {
+        border-right: 0 !important;
+    }
+
+    /* footer */
+    footer .mainFooter {
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+.titleBg {
+    background-color: #00AEAE;
+}
+
+.subTitleBg {
+    background-color: #FFFFCE;
+}
+
+.borderGray {
+    border: 1px solid #BFBFBF;
+}
+
+.borderBottom {
+    border-bottom: 1px solid #BFBFBF;
+}
+
+.borderRight {
+    border-right: 1px solid #BFBFBF;
+}
+
+.fileUploadBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.fileDeleteBtn {
+    top: 40%;
+    left: 37%;
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 12px;
+    opacity: 0.6;
+    cursor: pointer;
+}

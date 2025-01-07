@@ -3,7 +3,7 @@
 @model IndexViewModel
 @{
     ViewBag.Title = "永慶專案CRUD";
-    Layout = "~/Views/Shared/_DocumentLayout.cshtml";
+    Layout = "~/Views/Shared/_GridLayout.cshtml";
 }
 <h2 class="title mb-1">
     <span>
@@ -13,9 +13,10 @@
 @using (Html.BeginForm("Index", "Index", FormMethod.Post, new { id = "QueryDocForm", @novalidate = "", autocomplete = "off", enctype = "multipart/form-data", @onsubmit = "return false" }))
 {
     @Html.AntiForgeryToken()
-        @Html.Partial("Index01Partial", Model)
-        @Html.Partial("Index02Partial", Model)
+    @Html.Partial("Index01Partial", Model)
+    @Html.Partial("Index02Partial", Model)
+
 }
 @section scripts {
-    <script src="~/Scripts/Views/Home/Index.js?@DateTime.Now.ToString("yyyyMMddHHmmssff")"></script>
+    <script src="~/Scripts/View/Index00.js?@DateTime.Now.ToString("yyyyMMddHHmmssff")"></script>
 }

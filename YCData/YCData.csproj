@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -40,17 +40,17 @@
     <Reference Include="GemBox.Spreadsheet, Version=43.0.35.1127, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>..\packages\GemBox.Spreadsheet.43.0.0.1127\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PSTFrame.Data.1.0.1\lib\net451\PSTFrame.Data.dll</HintPath>
+    <Reference Include="PSTFrame.Data">
+      <HintPath>..\lib\PSTFram.MVC\PSTFrame.Data.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Data.Dapper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PSTFrame.Data.Dapper.1.0.3\lib\net451\PSTFrame.Data.Dapper.dll</HintPath>
+    <Reference Include="PSTFrame.Data.Dapper">
+      <HintPath>..\lib\PSTFram.MVC\PSTFrame.Data.Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Document.Spreadsheet, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PSTFrame.Document.Spreadsheet.0.1.1\lib\net451\PSTFrame.Document.Spreadsheet.dll</HintPath>
+    <Reference Include="PSTFrame.Document.Spreadsheet">
+      <HintPath>..\lib\PSTFram.MVC\PSTFrame.Document.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Utility, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PSTFrame.Utility.1.0.6\lib\net451\PSTFrame.Utility.dll</HintPath>
+    <Reference Include="PSTFrame.Utility">
+      <HintPath>..\lib\PSTFram.MVC\PSTFrame.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -69,14 +69,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\ConnectionString.cs" />
     <Compile Include="Model\DB\Houses.cs" />
+    <Compile Include="Model\View\V_Houses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\HousesRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
-    <Folder Include="Model\View\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

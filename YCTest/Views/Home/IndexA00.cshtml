@@ -1,0 +1,20 @@
+﻿@using YCTest.Models.ViewModel
+
+@model IndexViewModel
+@{
+    ViewBag.Title = "永慶專案新增";
+    Layout = "~/Views/Shared/_DocumentLayout.cshtml";
+}
+<h2 class="title mb-1">
+    <span>
+        @ViewBag.Title
+    </span>
+</h2>
+@using (Html.BeginForm("POSTHouses", "BaseApi", FormMethod.Post, new { id = "QueryDocForm", @novalidate = "", autocomplete = "off", enctype = "multipart/form-data", @onsubmit = "return false" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Partial("IndexA01Partial", Model)
+}
+@section scripts {
+    <script src="~/Scripts/View/Index00.js?@DateTime.Now.ToString("yyyyMMddHHmmssff")"></script>
+}

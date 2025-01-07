@@ -1,0 +1,22 @@
+﻿@using YCTest.Models.ViewModel
+
+@model IndexViewModel
+@{
+    ViewBag.Title = "永慶專案CRUD";
+    Layout = "~/Views/Shared/_DocumentLayout.cshtml";
+}
+<h2 class="title mb-1">
+    <span>
+        @ViewBag.Title
+    </span>
+</h2>
+@using (Html.BeginForm("PUTHouses", "BaseApi", FormMethod.Post, new { id = "QueryDocForm", @novalidate = "", autocomplete = "off", enctype = "multipart/form-data", @onsubmit = "return false" }))
+{
+    @Html.HiddenFor(x => x.houses.SerId)
+
+    @Html.AntiForgeryToken()
+    @Html.Partial("IndexE01Partial", Model)
+}
+@section scripts {
+    <script src="~/Scripts/View/Index00.js?@DateTime.Now.ToString("yyyyMMddHHmmssff")"></script>
+}

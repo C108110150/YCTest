@@ -1,4 +1,53 @@
-﻿@{
+﻿@using YCData.Model.View;
+
+
+@{
     ViewBag.Title = "永慶專案";
 }
 
+<script>
+    function operateFormatter(data, type, row, meta) {
+        let result = "";
+        result += `<button class="btn btn-success" type="button" id="btnEdit" onclick="_EditHousesDialogOption.Data ={SerId:'${row.SerId}'}; EditShowDialog(_EditHousesDialogOption)">編輯</button>`;
+        result += `<button class="btn btn-danger" type="button" id="btnDelete" onclick= "Delete_Houses('${row.SerId}')">刪除</button>`;
+        return result;
+    }
+
+</script>
+<div class="my-2">
+
+    @(Html.DataTableFor<V_Houses>().Columns(
+            col =>
+            {
+                col.Field(x => x.HouseName).Title("物件名稱").Orderable(false);
+                col.Field(x => x.City).Title("縣市").Orderable(false);
+                col.Field(x => x.Area).Title("區域").Orderable(true);
+                col.Field(x => x.Address).Title("地址").Orderable(false);
+                col.Field(x => x.SerId).Title("操作").Render("operateFormatter").Orderable(false);
+
+            }
+            ).AddProperty("id", "queryTable")
+        .AddProperty("class", "table table-striped table-hover table-bordered text-center")
+        .AutoWidth(false)
+        .ServerSide(true)
+        .DeferRender(true)
+        .Searching(false)
+        .Ordering(true)
+        .Paging(true)
+        .Processing(true)
+        .Destroy(true)
+        .DeferLoading("0")
+        .PageLength(50)
+        .LengthChange(true)
+        .LengthMenu("lengthMenuList")
+        .Language(new PSTFrame.MVC.Helper.Table.DataTablesLanguage { Url = "/Scripts/datatables-zh-TW.js", ZeroRecords = "沒有符合的結果" })
+        .Ajax(new PSTFrame.MVC.Helper.Table.DataTablesAjax
+        {
+            Method = "post",
+            Url = Url.Content("~/BaseApi/GetHouses"),
+            Data = "ajaxParam"
+        })
+        .ToHtml()
+
+    )
+</div>

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using YCData.Model.DB;
 using YCData.Repository;
 
 namespace YCTest.Models.Service
@@ -27,6 +28,11 @@ namespace YCTest.Models.Service
         {
             init();
         }
+        public Houses GetHouses(int SerId)
+        {
+            return housesRepo.Get(SerId);
+        }
+
 
         public object GetCityOptions(string defaultValue = "")
         {
