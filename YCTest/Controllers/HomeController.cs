@@ -15,9 +15,9 @@ namespace YCTest.Controllers
         public ActionResult Index00()
         {
             IndexViewModel  model= new IndexViewModel();
-            //HomeService service = new HomeService();
-            //ViewBag.CityOptions = service.GetCityOptions();
-            //ViewBag.AreaOptions = service.GetAreaOptions();
+            HomeService service = new HomeService();
+            ViewBag.CityOptions = service.GetCityOptions();
+            ViewBag.AreaOptions = service.GetAreaOptions();
             return View(model);
         }
 
@@ -25,9 +25,9 @@ namespace YCTest.Controllers
         public ActionResult IndexA00()
         {
             IndexViewModel model = new IndexViewModel();
-            //HomeService service = new HomeService();
-            //ViewBag.CityOptions = service.GetCityOptions();
-            //ViewBag.AreaOptions = service.GetAreaOptions();
+            HomeService service = new HomeService();
+            ViewBag.CityOptions = service.GetCityOptions();
+            ViewBag.AreaOptions = service.GetAreaOptions();
             return View(model);
         }
 
@@ -37,8 +37,8 @@ namespace YCTest.Controllers
             IndexViewModel model = new IndexViewModel();
             HomeService service = new HomeService();
             model.houses= service.GetHouses(SerId);
-            //ViewBag.CityOptions = service.GetCityOptions();
-            //ViewBag.AreaOptions = service.GetAreaOptions();
+            ViewBag.CityOptions = service.GetCityOptions();
+            ViewBag.AreaOptions = service.GetAreaOptions();
             return View(model);
         }
 

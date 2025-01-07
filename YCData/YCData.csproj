@@ -40,16 +40,20 @@
     <Reference Include="GemBox.Spreadsheet, Version=43.0.35.1127, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>..\packages\GemBox.Spreadsheet.43.0.0.1127\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Data">
+    <Reference Include="PSTFrame.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\PSTFram.MVC\PSTFrame.Data.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Data.Dapper">
+    <Reference Include="PSTFrame.Data.Dapper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\PSTFram.MVC\PSTFrame.Data.Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Document.Spreadsheet">
+    <Reference Include="PSTFrame.Document.Spreadsheet, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\PSTFram.MVC\PSTFrame.Document.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="PSTFrame.Utility">
+    <Reference Include="PSTFrame.Utility, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\PSTFram.MVC\PSTFrame.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
